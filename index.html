@@ -6,10 +6,18 @@
 <script>
 function checkPassword() {
     var password = document.getElementById("password").value;
+    var wrongs = 0
     if(password == "07070126bRaD") {
-        document.getElementById("output").textContent = "Server running at 209.89.146.201";
+        document.getElementById("output").textContent = "Not running";
     } else {
         document.getElementById("output").textContent = "Incorrect password";
+        wrongs = wrongs + 1;
+        if (wrongs > 2 ) {
+            while true {
+                alert("too many wrong passwords!")
+            }
+        }
+        
     }
     return false; // Prevent form submission
 }
